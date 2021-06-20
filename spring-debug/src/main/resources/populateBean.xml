@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+	<context:component-scan base-package="vip.ikkyu.populateBean"></context:component-scan>
+
+	<bean name="person" class="vip.ikkyu.populateBean.Person" autowire="byName"></bean>
+	<bean name="person2" class="vip.ikkyu.populateBean.Person" autowire="byType"></bean>
+
+
+   <bean name="address" class="vip.ikkyu.populateBean.Address">
+	   <constructor-arg name="province" value="四川"/>
+	   <constructor-arg name="city" value="乐山"/>
+	   <constructor-arg name="town" value="沙湾"/>
+   </bean>
+
+
+</beans>

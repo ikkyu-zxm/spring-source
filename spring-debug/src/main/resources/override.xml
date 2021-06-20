@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="vip.ikkyu.overrides.lookup.Apple" id="apple">
+		<replaced-method name="name" replacer="strawberry"/>
+	</bean>
+	<bean class="vip.ikkyu.overrides.replace.Strawberry" id="strawberry"/>
+
+	<bean class="vip.ikkyu.overrides.lookup.AbstractFruitPlate" id="abstractFruitPlate"  >
+		<lookup-method name="getFruit" bean="apple"></lookup-method>
+	</bean>
+</beans>
